@@ -1,19 +1,19 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.ds;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 public class DSSignature {
 
-  @JacksonXmlProperty(localName = "xmlns:ds", isAttribute = true)
+  @JacksonXmlProperty(localName = "ds", isAttribute = true, namespace = "xmlns")
   private String attrDs = "http://www.w3.org/2000/09/xmldsig#";
 
-  @JacksonXmlProperty(localName = "ds:SignedInfo")
+  @JacksonXmlProperty(localName = "SignedInfo", namespace = "ds")
   private DSSignedInfo sigendInfo = new DSSignedInfo();
 
-  @JacksonXmlProperty(localName = "ds:SignatureValue")
+  @JacksonXmlProperty(localName = "SignatureValue", namespace = "ds")
   private DSSignatureValue signatureValue = new DSSignatureValue();
 
-  @JacksonXmlProperty(localName = "ds:KeyInfo")
+  @JacksonXmlProperty(localName = "KeyInfo", namespace = "ds")
   private DSKeyInfo keyInfo = new DSKeyInfo();
 
   public String getAttrDs() {

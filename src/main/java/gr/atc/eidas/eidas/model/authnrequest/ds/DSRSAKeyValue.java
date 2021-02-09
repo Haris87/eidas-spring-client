@@ -1,13 +1,13 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.ds;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 public class DSRSAKeyValue {
 
-  @JacksonXmlProperty(localName = "ds:Modulus")
+  @JacksonXmlProperty(localName = "Modulus", namespace = "ds")
   private DSModulus modulus = new DSModulus();
 
-  @JacksonXmlProperty(localName = "ds:Exponent")
+  @JacksonXmlProperty(localName = "Exponent", namespace = "ds")
   private DSExponent exponent = new DSExponent();
 
 }

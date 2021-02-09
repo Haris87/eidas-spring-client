@@ -1,11 +1,11 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.ds;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
-public class DSModulus {
+public class DSSignatureValue {
 
   @JacksonXmlText
-  private String value = "nEPz==";
+  private String value = "SaO8==";
 
   public String getValue() {
     return value;

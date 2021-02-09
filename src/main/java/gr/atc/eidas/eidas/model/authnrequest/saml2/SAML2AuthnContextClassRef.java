@@ -1,11 +1,11 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.saml2;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
 public class SAML2AuthnContextClassRef {
 
-  @JacksonXmlProperty(localName = "xmlns:saml2", isAttribute = true)
+  @JacksonXmlProperty(localName = "saml2", isAttribute = true, namespace = "xmlns")
   private String attrSAML2 = "urn:oasis:names:tc:SAML:2.0:assertion";
 
   @JacksonXmlText

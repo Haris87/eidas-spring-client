@@ -1,15 +1,16 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.saml2p;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
+import gr.atc.eidas.eidas.model.authnrequest.ds.DSSignature;
+import gr.atc.eidas.eidas.model.authnrequest.saml2.SAML2Issuer;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-@JacksonXmlRootElement(localName = "saml2p:AuthnRequest")
+@JacksonXmlRootElement(localName = "AuthnRequest", namespace = "sampl2p")
 public class SAML2PAuthnRequest {
 
   @JacksonXmlProperty(localName = "Destination", isAttribute = true)
@@ -24,25 +25,25 @@ public class SAML2PAuthnRequest {
   @JacksonXmlProperty(localName = "Version", isAttribute = true)
   private final String attrVersion = "2.0";
 
-  @JacksonXmlProperty(localName = "xmlns:saml2p", isAttribute = true)
+  @JacksonXmlProperty(localName = "saml2p", isAttribute = true, namespace = "xmlns")
   private final String attrSAML2P = "urn:oasis:names:tc:SAML:2.0:protocol";
 
-  @JacksonXmlProperty(localName = "xmlns:eidas", isAttribute = true)
+  @JacksonXmlProperty(localName = "eidas", isAttribute = true, namespace = "xmlns")
   private final String attrEIDAS = "http://eidas.europa.eu/saml-extensions";
 
-  @JacksonXmlProperty(localName = "saml2:Issuer")
+  @JacksonXmlProperty(localName = "Issuer", namespace = "saml2")
   private SAML2Issuer issuer = new SAML2Issuer();
 
-  @JacksonXmlProperty(localName = "ds:Signature")
+  @JacksonXmlProperty(localName = "Signature", namespace = "ds")
   private DSSignature signature = new DSSignature();
 
-  @JacksonXmlProperty(localName = "saml2p:Extensions")
+  @JacksonXmlProperty(localName = "Extensions", namespace = "saml2p")
   private SAML2PExtensions extensions = new SAML2PExtensions();
 
-  @JacksonXmlProperty(localName = "saml2p:NameIDPolicy")
+  @JacksonXmlProperty(localName = "NameIDPolicy", namespace = "saml2p")
   private SAML2PNameIDPolicy nameIDPolicy = new SAML2PNameIDPolicy();
 
-  @JacksonXmlProperty(localName = "saml2p:RequestedAuthnContext")
+  @JacksonXmlProperty(localName = "RequestedAuthnContext", namespace = "saml2p")
   private SAML2PRequestedAuthnContext requestedAuthnContext = new SAML2PRequestedAuthnContext();
 
   public SAML2PExtensions getExtensions() {
@@ -109,7 +110,6 @@ public class SAML2PAuthnRequest {
   public void setIssuer(SAML2Issuer issuer) {
     this.issuer = issuer;
   }
-
 
   public String serializeToXML() throws JsonProcessingException {
     XmlMapper xmlMapper = new XmlMapper();

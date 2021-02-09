@@ -1,4 +1,4 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.eidas;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 

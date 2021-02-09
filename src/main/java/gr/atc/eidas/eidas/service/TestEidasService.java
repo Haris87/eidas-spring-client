@@ -1,7 +1,7 @@
 //package gr.atc.eidas.eidas.service;
 //
 //import com.google.common.io.CharSource;
-//import gr.atc.eidas.eidas.model.SAML2PAuthnRequest;
+//import gr.atc.eidas.eidas.model.authnrequest.saml2p.SAML2PAuthnRequest;
 //import java.io.ByteArrayInputStream;
 //import java.io.File;
 //import java.io.FileOutputStream;

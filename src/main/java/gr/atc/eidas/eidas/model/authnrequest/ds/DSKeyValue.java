@@ -1,10 +1,10 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.ds;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 public class DSKeyValue {
 
-  @JacksonXmlProperty(localName = "ds:RSAKeyValue")
+  @JacksonXmlProperty(localName = "RSAKeyValue", namespace = "ds")
   private DSRSAKeyValue rsaKeyValue = new DSRSAKeyValue();
 
   public DSRSAKeyValue getRsaKeyValue() {

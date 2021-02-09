@@ -1,17 +1,19 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.saml2p;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import gr.atc.eidas.eidas.model.authnrequest.eidas.EIDASRequestedAttribute;
+import gr.atc.eidas.eidas.model.authnrequest.eidas.EIDASSPType;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SAML2PExtensions {
 
-  @JacksonXmlProperty(localName = "eidas:SPType")
+  @JacksonXmlProperty(localName = "SPType", namespace = "eidas")
   private EIDASSPType spType = new EIDASSPType();
 
-  @JacksonXmlElementWrapper(localName = "eidas:RequestedAttributes")
-  @JacksonXmlProperty(localName = "eidas:RequestedAttribute")
+  @JacksonXmlElementWrapper(localName = "RequestedAttributes", namespace = "eidas")
+  @JacksonXmlProperty(localName = "RequestedAttribute", namespace = "eidas")
   private List<EIDASRequestedAttribute> requestedAttributes = new ArrayList<>();
 
   public SAML2PExtensions(){

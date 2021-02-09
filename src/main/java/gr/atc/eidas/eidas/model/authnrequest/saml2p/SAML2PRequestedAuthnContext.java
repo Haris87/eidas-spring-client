@@ -1,13 +1,14 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.saml2p;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import gr.atc.eidas.eidas.model.authnrequest.saml2.SAML2AuthnContextClassRef;
 
 public class SAML2PRequestedAuthnContext {
 
   @JacksonXmlProperty(localName = "Comparison", isAttribute = true)
   private String attrComparison = "minimum";
 
-  @JacksonXmlProperty(localName = "saml2:AuthnContextClassRef")
+  @JacksonXmlProperty(localName = "AuthnContextClassRef", namespace = "saml2")
   SAML2AuthnContextClassRef authnContextClassRef = new SAML2AuthnContextClassRef();
 
   public String getAttrComparison() {

@@ -1,4 +1,4 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.ds;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -10,14 +10,14 @@ public class DSReference {
   @JacksonXmlProperty(localName = "URI", isAttribute = true)
   private String attrURI = "#_171ccc6b39b1e8f6e762c2e4ee4ded3a";
 
-  @JacksonXmlElementWrapper(localName = "ds:Transforms")
-  @JacksonXmlProperty(localName = "ds:Transform")
+  @JacksonXmlElementWrapper(localName = "Transforms", namespace = "ds")
+  @JacksonXmlProperty(localName = "Transform", namespace = "ds")
   private List<DSTransform> transforms = new ArrayList<>();
 
-  @JacksonXmlProperty(localName = "ds:DigestMethod")
+  @JacksonXmlProperty(localName = "DigestMethod", namespace = "ds")
   private DSDigestMethod digestMethod = new DSDigestMethod();
 
-  @JacksonXmlProperty(localName = "ds:DigestValue")
+  @JacksonXmlProperty(localName = "DigestValue", namespace = "ds")
   private DSDigestValue digestValue = new DSDigestValue();
 
   public DSReference(){

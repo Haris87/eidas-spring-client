@@ -1,11 +1,11 @@
-package gr.atc.eidas.eidas.model;
+package gr.atc.eidas.eidas.model.authnrequest.ds;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
-public class DSExponent {
+public class DSModulus {
 
   @JacksonXmlText
-  private String value = "AQAB";
+  private String value = "nEPz==";
 
   public String getValue() {
     return value;
