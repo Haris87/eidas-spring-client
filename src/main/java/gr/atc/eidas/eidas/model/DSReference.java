@@ -14,6 +14,12 @@ public class DSReference {
   @JacksonXmlProperty(localName = "ds:Transform")
   private List<DSTransform> transforms = new ArrayList<>();
 
+  @JacksonXmlProperty(localName = "ds:DigestMethod")
+  private DSDigestMethod digestMethod = new DSDigestMethod();
+
+  @JacksonXmlProperty(localName = "ds:DigestValue")
+  private DSDigestValue digestValue = new DSDigestValue();
+
   public DSReference(){
     DSTransform transform1 = new DSTransform();
     transform1.setAttrAlgorithm("http://www.w3.org/2000/09/xmldsig#enveloped-signature");
@@ -23,6 +29,30 @@ public class DSReference {
 
     this.transforms.add(transform1);
     this.transforms.add(transform2);
+  }
+
+  public String getAttrURI() {
+    return attrURI;
+  }
+
+  public void setAttrURI(String attrURI) {
+    this.attrURI = attrURI;
+  }
+
+  public DSDigestMethod getDigestMethod() {
+    return digestMethod;
+  }
+
+  public void setDigestMethod(DSDigestMethod digestMethod) {
+    this.digestMethod = digestMethod;
+  }
+
+  public DSDigestValue getDigestValue() {
+    return digestValue;
+  }
+
+  public void setDigestValue(DSDigestValue digestValue) {
+    this.digestValue = digestValue;
   }
 
   public List<DSTransform> getTransforms() {

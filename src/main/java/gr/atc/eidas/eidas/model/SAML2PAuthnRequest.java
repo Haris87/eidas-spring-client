@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -34,6 +35,40 @@ public class SAML2PAuthnRequest {
 
   @JacksonXmlProperty(localName = "ds:Signature")
   private DSSignature signature = new DSSignature();
+
+  @JacksonXmlProperty(localName = "saml2p:Extensions")
+  private SAML2PExtensions extensions = new SAML2PExtensions();
+
+  @JacksonXmlProperty(localName = "saml2p:NameIDPolicy")
+  private SAML2PNameIDPolicy nameIDPolicy = new SAML2PNameIDPolicy();
+
+  @JacksonXmlProperty(localName = "saml2p:RequestedAuthnContext")
+  private SAML2PRequestedAuthnContext requestedAuthnContext = new SAML2PRequestedAuthnContext();
+
+  public SAML2PExtensions getExtensions() {
+    return extensions;
+  }
+
+  public void setExtensions(SAML2PExtensions extensions) {
+    this.extensions = extensions;
+  }
+
+  public SAML2PNameIDPolicy getNameIDPolicy() {
+    return nameIDPolicy;
+  }
+
+  public void setNameIDPolicy(SAML2PNameIDPolicy nameIDPolicy) {
+    this.nameIDPolicy = nameIDPolicy;
+  }
+
+  public SAML2PRequestedAuthnContext getRequestedAuthnContext() {
+    return requestedAuthnContext;
+  }
+
+  public void setRequestedAuthnContext(
+      SAML2PRequestedAuthnContext requestedAuthnContext) {
+    this.requestedAuthnContext = requestedAuthnContext;
+  }
 
   public DSSignature getSignature() {
     return signature;
