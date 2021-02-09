@@ -1,7 +1,7 @@
 //package gr.atc.eidas.eidas.service;
 //
 //import com.google.common.io.CharSource;
-//import gr.atc.eidas.eidas.model.EIDASAuthnRequest;
+//import gr.atc.eidas.eidas.model.SAML2PAuthnRequest;
 //import java.io.ByteArrayInputStream;
 //import java.io.File;
 //import java.io.FileOutputStream;
@@ -59,7 +59,7 @@
 //public class EidasService {
 //
 //  public void testSendRequest() throws Exception {
-//    EIDASAuthnRequest request = new EIDASAuthnRequest();
+//    SAML2PAuthnRequest request = new SAML2PAuthnRequest();
 //    System.out.println(request.serializeToXML());
 //
 //    throw new Exception();
